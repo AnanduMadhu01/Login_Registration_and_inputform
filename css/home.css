@@ -1,0 +1,101 @@
+*{
+padding: 0;
+margin: 0;
+}
+body{
+    background-color: #8e9cda;
+}
+header{
+height: 100px;
+background-color: #4d2da5;
+margin-bottom: 50px;
+}
+h1{
+color: white;
+line-height: 100px;
+}
+h2{
+    text-align: center;
+    padding: 20px;
+}
+.wrapper{
+    background-color: #b5beeb;
+    width: 400px;
+    border: 1px solid black;
+    padding: 20px;
+    margin: auto;
+    border-radius: 8px;
+    height: 280px;
+}
+form label{
+    font-weight: bolder;
+    margin-top: 20px;
+    float: left;
+}
+form input{
+    width: 190px;
+    margin: 5px;
+    line-height: 30px;
+    float: right;
+}
+input[type="submit"]{
+    width: 80px;
+    float: none;
+    margin-top: 10px;
+    margin-left: 200px;
+    padding: 5px;
+    font-weight: bolder;
+    background-color: rgb(129, 173, 240);
+}
+span{
+    font-size: 20px;
+    position: fixed;
+    top: 45px;
+    right: 20px;
+}
+span a{
+    color: white;
+    text-decoration: none;
+}
+span a:hover{
+    color: red;
+}
+.error{
+    color: red;
+    font-style: italic;
+}
+.btncancel{
+    width: 80px;
+    float: none;
+    margin-top: 10px;
+    padding: 5px;
+    line-height: 30px;
+    font-weight: bolder;
+    background-color: rgb(190, 124, 124);
+}
+.wrapper{
+    display: none;
+}
+.btn_newprofile{
+    font-size: 20px;
+    position: fixed;
+    top: 40px;
+    right: 100px;
+}
+.btn_newprofile button{
+    padding: 7px 10px;
+    border-radius: 10px;
+    background-image:linear-gradient(blue,lightblue) 
+}
+.btn_newprofile button:hover{
+    background-image:linear-gradient(lightblue,blue) 
+}
+.card{
+    width: 250px;
+    margin: auto;
+}
+.card img{
+    width: 250px;
+    height: 300px;
+    cursor: pointer;
+}
