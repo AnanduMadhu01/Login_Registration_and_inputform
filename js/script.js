@@ -5,8 +5,8 @@ modal.style.display = 'block';
 formmodal.style.display = 'none';
 }
 function closeModal() {
-modal.style.display = 'none';
-formmodal.style.display = 'block';
+    modal.style.display = 'none';
+    formmodal.style.display = 'block';
 }
 function validate(){
     const form = document.getElementById("form");

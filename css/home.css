@@ -21,7 +21,7 @@ h2{
 .wrapper{
     background-color: #b5beeb;
     width: 400px;
-    border: 1px solid black;
+    border: 1px solid #000;
     padding: 20px;
     margin: auto;
     border-radius: 8px;
@@ -90,12 +90,30 @@ span a:hover{
 .btn_newprofile button:hover{
     background-image:linear-gradient(lightblue,blue) 
 }
-.card{
-    width: 250px;
-    margin: auto;
+.container-card{
+    width:95%;
+    margin:auto;
+    padding:5px;
 }
-.card img{
-    width: 250px;
-    height: 300px;
-    cursor: pointer;
+.card{
+    border:1px solid black;
+    width:20%;
+    float:left;
+    padding:10px;
+    background-color:#4d2da5;
+    border-radius:4px;
+    line-height:50px;
+    color: #fff;
+}
+.card:hover{
+    background-color:rgb(73, 69, 112);
+    padding:11px;
+}
+.card h3{
+    margin-left:10px;
+}
+.card i{
+    float: right;
+    line-height:50px;
+    color: #fff;
 }

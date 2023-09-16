@@ -14,8 +14,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>home</title>
     <link rel="stylesheet" href="css/home.css">
+    <style>
+        
+    </style>
 </head>
 <body>
     <?php
@@ -79,10 +83,17 @@
                 <button type="button" class="btncancel" onclick="closeModal();">Cancel</button>
             </form>
         </div>
-        <div class="card" id="formcard">
-            <a href="form.php"><img src="images/formicon.png" alt=""></a>
+        <div class="container-card" onclick="goToForm()" id="formcard">
+            <div class="card">
+                <h3>View Form <i class="fa-regular fa-address-card"></i></h3>
+            </div>
         </div>
     </div>
     <script src="js/script.js"></script>
+    <script>
+        function goToForm(){
+            window.location.href = "form.php";
+        }
+    </script>
 </body>
 </html>

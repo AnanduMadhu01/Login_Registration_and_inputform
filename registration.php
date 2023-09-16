@@ -15,40 +15,53 @@
    
   <div class="wrapper">
   <?php
+  function validateEmail($email) {
+    return (!preg_match("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$^", $email))
+              ? FALSE : TRUE;
+      }
+      
     $_SESSION['name']=$_SESSION['email']=$_SESSION['error']="";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name= $_POST["name"];
         $_SESSION['name']=$name;
+
         $email= $_POST["email"];
         $_SESSION['email']=$email;
-        $pass= $_POST["pass"];
-        $rpass= $_POST["repass"];
-        $qry="SELECT * FROM `user_details` WHERE `EMAIL`='$email'";
-        $result = getData($qry);
-        if ($result->num_rows != 0) {
-            $_SESSION['error']="Email aldrady exist.";
-        } else if($pass != $rpass){
-            $_SESSION['error']="Password missmatch.";
-        } else{
-            // $newpass=password_hash($pass,PASSWORD_BCRYPT);
-            $newpass=md5($pass);
-            $sql="INSERT INTO `user_details`( `NAME`, `EMAIL`, `PASSWORD`) VALUES ('$name','$email','$newpass')";
-            if(setData($sql)==true){
-                ?>
-                <script>
-                    swal({
-                    title: "Registration Successfull!",
-                    text: "You can Login now!",
-                    icon: "success",
-                    button: "OK"
-                });
-                window.onclick = myFunction;
-                function myFunction() {
-                    location.replace("index.php");
-                    }
-                </script>
-                <?php
-            }
+        if(!validateEmail($_POST["email"])) {
+          $_SESSION['error']="Enter a valid Email.";
+        }
+        else {
+          $email= $_POST["email"];
+          $_SESSION['email']=$email;
+          $pass= $_POST["pass"];
+          $rpass= $_POST["repass"];
+          $qry="SELECT * FROM `user_details` WHERE `EMAIL`='$email'";
+          $result = getData($qry);
+          if ($result->num_rows != 0) {
+              $_SESSION['error']="Email aldrady exist.";
+          } else if($pass != $rpass){
+              $_SESSION['error']="Password missmatch.";
+          } else{
+              // $newpass=password_hash($pass,PASSWORD_BCRYPT);
+              $newpass=md5($pass);
+              $sql="INSERT INTO `user_details`(`f1`,`NAME`, `EMAIL`, `PASSWORD`) VALUES ('$name','$email','$newpass')";
+              if(setData($sql)==true){
+                  ?>
+                  <script>
+                      swal({
+                      title: "Registration Successfull!",
+                      text: "You can Login now!",
+                      icon: "success",
+                      button: "OK"
+                  });
+                  window.onclick = myFunction;
+                  function myFunction() {
+                      location.replace("index.php");
+                      }
+                  </script>
+                  <?php
+              }
+          }
         }
     }
     ?>
